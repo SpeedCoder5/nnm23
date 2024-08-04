@@ -36,7 +36,7 @@ async def process_rows(row):
     return new_rows
 
 async def main():
-    df = pd.read_csv("4.0_MEGA_NUMBERED2.csv")
+    df = pd.read_csv("nnm23/GPT4.0_aggregated_results/4.0_MEGA_NUMBERED2.csv")
 
     new_rows = []
     tasks = []
@@ -48,7 +48,7 @@ async def main():
         new_rows.extend(await task)
 
     new_df = pd.DataFrame(new_rows)
-    new_df.to_csv("4.0embeddings.csv", index=False)
+    new_df.to_csv("nnm23/GPT4.0_aggregated_results/4.0embeddings.csv", index=False)
 
 if __name__ == "__main__":
     asyncio.run(main())

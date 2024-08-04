@@ -5,7 +5,7 @@ import umap
 import plotly.graph_objects as go
 from tqdm import tqdm  # progress bar
 
-df = pd.read_csv('4.0embeddings_filtered.csv')
+df = pd.read_csv('nnm23/GPT4.0_aggregated_results/4.0embeddings.csv')
 
 embeddings = df['embedding'].apply(eval).tolist()
 
@@ -55,4 +55,4 @@ fig.update_layout(
     )
 )
 
-fig.write_html('4.0_umap_interactive_with_hover.html')
+fig.write_html('nnm23/visualizations (umap)/4.0_umap_interactive_3d_with_hover_test.html')
