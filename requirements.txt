@@ -1,0 +1,8 @@
+aiohttp
+google-cloud
+numpy
+openai
+pandas
+plotly
+tqdm
+umap-learn

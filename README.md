@@ -1,6 +1,36 @@
 # capstone
 
-I made the python files in this repository to interact with openAI's ChatGPT api to automate the data gathering process for the project. I will briefly explain the workflow below:
+## Setup
+
+A makefile is used to create a Python virtual environment.
+The virtual environment must be activated prior to running any scripts. 
+
+### `make venv`
+
+Creates a Python virtual environment and installs dependencies from `requirements.txt`.
+
+```sh
+make venv
+```
+
+### `activate`
+
+Activates the Python virtual environment.
+
+```sh
+source venv/bin/activate
+```
+
+### Credentials
+
+Scripts require the following credentials:
+
+- credentials/openai-key.txt     <- contains the value of the access token for your open-ai project  
+- credentials/translate-key.txt  <- contains the value of the access token for your google translate api
+
+## Usage
+
+The python files in this repository to interact with openAI's ChatGPT api to automate the data gathering process for the project. I will briefly explain the workflow below:
 
 1. make a folder called "credentials" and put your openAI and Google Cloud tokens there
 2. input.csv has the questions that will be queried to ChatGPT
@@ -10,5 +40,5 @@ I made the python files in this repository to interact with openAI's ChatGPT api
 6. json_counter.py/csv_counter.py checks to see if any got duplicated or lost
 7. jsonToCSVformatter.py needs to be run to convert the json file to a csv file for the embeddings
 8. csv_number_correlator.py cleans up the csv file and numbers the rows instead of repeating the original question each time, which simplifies the embeddings graph later on
-9. now, with the cleaned up csv file, pass it through queryer_async.py to get the embeddings
+9. now, with the cleaned up csv file, pass it through embeddings_queryer_async.py to get the embeddings
 10. pass the returned csv file to either umapper_2D.py or umapper3D.py to make an interactive html graph.
